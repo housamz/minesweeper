@@ -1,0 +1,154 @@
+body{
+    overflow: hidden;
+    background-color: #C0C0C0;
+    font-family: sans-serif;
+    font-size: 12px
+}
+
+a {
+    cursor: pointer
+}
+
+.hidden{
+    visibility: hidden
+}
+
+#gameArea, footer{
+    line-height: 0;
+    margin: auto;
+    width: fit-content;
+    display: block
+}
+
+#header{
+    display: inline;
+    padding: 10px 0;
+}
+
+/* Time and bomb counts digital screen */
+#header span {
+    width: 13px;
+    height: 23px
+}
+.time0 { background-position: 0 0 }
+.time1 { background-position: -13px 0 }
+.time2 { background-position: -26px 0 }
+.time3 { background-position: -39px 0 }
+.time4 { background-position: -52px 0 }
+.time5 { background-position: -65px 0 }
+.time6 { background-position: -78px 0 }
+.time7 { background-position: -91px 0 }
+.time8 { background-position: -104px 0 }
+.time9 { background-position: -117px 0 }
+.time- { background-position: -130px 0 }
+
+/* Game board cells */
+#gameBoard a {
+    width: 16px;
+    height: 16px
+}
+.open0 { background-position: 0 -49px }
+.open1 { background-position: -16px -49px }
+.open2 { background-position: -32px -49px }
+.open3 { background-position: -48px -49px }
+.open4 { background-position: -64px -49px }
+.open5 { background-position: -80px -49px }
+.open6 { background-position: -96px -49px }
+.open7 { background-position: -112px -49px }
+.open8 { background-position: -128px -49px }
+.blank { background-position: 0 -65px }
+.bombflagged { background-position: -16px -65px }
+.bombdeath { background-position: -32px -65px }
+.bombmisflagged { background-position: -48px -65px }
+.bombrevealed { background-position: -64px -65px }
+.bombquestion { background-position: -80px -65px }
+
+/* Top Smiley Box */
+#header #smiley {
+    width:26px;
+    height: 26px;
+    margin: 0 12px;
+}
+.facesmile { background-position: 0 -23px }
+.facepressed { background-position: -26px -23px }
+.faceooh { background-position: -52px -23px }
+.facedead { background-position: -78px -23px }
+.facewin { background-position: -104px -23px }
+
+/* Game Borders */
+.border{
+    display: inline-block;
+    box-sizing: border-box;
+    border-top: solid 2px #fff;
+    border-right: solid 2px  #707070;
+    border-bottom: solid 2px #707070;
+    border-left: solid 2px #fff;
+}
+.border-h-out { width: 10px; height: 10px}
+.border-v-out { width: 10px; height: 16px}
+.border-h-in { width: 16px; height: 10px}
+.border-long { width: 10px; height: 26px}
+.bordertl { border-right: none; border-bottom: none }
+.bordertr { border-bottom: none; border-left: none }
+.borderbl { border-top: none; border-right: none }
+.borderbr { border-top: none; border-left: none }
+.bordertb { border-right: none; border-left: none }
+.borderjointl { border-top: none; border-bottom: none; border-right:none }
+.borderjointr { border-top: none; border-bottom: none; border-left:none }
+.borderlr { border-top: none; border-bottom: none}
+.borderlrlong { border-top: none; border-bottom: none; width: 10px; height: 32px }
+
+/* selecting custom level */
+#levelsList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 10px auto;
+    width: fit-content
+}
+
+#levelsList li {
+    margin:0 2px;
+    border-top: solid 2px #fff;
+    border-right: solid 2px  #707070;
+    border-bottom: solid 2px #707070;
+    border-left: solid 2px #fff;
+    padding: 5px 10px
+}
+
+#levelsList li.active {
+    font-weight: bold;
+    border-top: solid 2px #707070;
+    border-right: solid 2px  #fff;
+    border-bottom: solid 2px #fff;
+    border-left: solid 2px #707070;
+}
+
+.popUpModal {
+    background-color: rgba(0, 0, 0, .4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left:0
+}
+
+#customForm {
+    border: 1px solid #000;
+    padding: 20px;
+    background-color: #ccc;
+    margin: 40px auto 0;
+    max-width: 150px
+}
+
+#customForm label {
+    width:90px;
+    display: inline-block;
+    margin: 5px 0
+}
+
+#header span, #header #smiley, #gameBoard a {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAABRCAIAAACykLj+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyVpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ4IDc5LjE2NDAzNiwgMjAxOS8wOC8xMy0wMTowNjo1NyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIxLjAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjNCQzg5NzM1NDhBMTFFQUFBMjk5MzkzNEUzOTg0OUEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjNCQzg5NzQ1NDhBMTFFQUFBMjk5MzkzNEUzOTg0OUEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyM0JDODk3MTU0OEExMUVBQUEyOTkzOTM0RTM5ODQ5QSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyM0JDODk3MjU0OEExMUVBQUEyOTkzOTM0RTM5ODQ5QSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuxsxL8AAAbMSURBVHja7F2N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');
+    display: inline-block
+}
